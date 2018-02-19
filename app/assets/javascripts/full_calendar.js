@@ -38,8 +38,9 @@ initialize_calendar = function() {
         $.ajax({
             url: event.update_url,
             data: event_data,
-            type: 'PATCH'
+            type: 'PATCH',
         });
+    //    $("#calendar").fullCalendar('refresh');
       },
 
       eventClick: function(event, jsEvent, view) {

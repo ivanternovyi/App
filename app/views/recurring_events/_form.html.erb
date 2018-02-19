@@ -1,12 +1,14 @@
 <%= simple_form_for @recurring_event, remote: true do |f| %>
   <div class="form-inputs">
-    <%= f.input :title, as: :select, collection: [['Smith', 'Smith'], ['Johnson','Johnson'],
+    <%= f.input :title, prompt: 'Select worker', as: :select, collection: [['Smith', 'Smith'], ['Johnson','Johnson'],
     ['Williams','Williams'], ['Jones','Jones'], ['Brown','Brown'], ['Davis','Davis'], ['Miller','Miller'],
     ['Wilson','Wilson'], ['Mary','Mary'], ['Ivy','Ivy'], ['James','James'], ['Linda','Linda'],
-    ['Elizabeth','Elizabeth'], ['Maria','Maria'], ['Andy','Andy'], ['Edward','Edward']] %>
+    ['Elizabeth','Elizabeth'], ['Maria','Maria'], ['Andy','Andy'], ['Edward','Edward'], ['Holiday/Weekend','Holiday']] %>
     <%= f.input :anchor, input_html: { class: "form-control input-sm" } %>
     <%= f.input :frequency, as: :select, collection: RecurringEvent.frequencies.keys, input_html: { class: "form-control input-sm" } %>
-    <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
+    <%= f.input :color, prompt: 'Select color', as: :select, collection: [['Black','black'], ['Green','green'],
+    ['Red','red'], ['Grey', 'grey'], ['Blue', 'blue'], ['Orange', 'orange'], ['Olive', 'olive'],
+    ['Brown', 'brown'], ['Lightblue', 'lightblue']] %>
   </div>
 
   <div class="form-actions">

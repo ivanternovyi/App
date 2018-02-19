@@ -12,7 +12,7 @@
 #
 
 class RecurringEvent < ApplicationRecord
-  enum frequency: { weekly: 0, biweekly: 1, monthly: 2, annually: 3 }
+  enum frequency: { weekly: 0, biweekly: 1, every16weeks: 2, monthly: 3, annually: 4 }
 
   validates :anchor, presence: true
   validates :frequency, presence: true
@@ -25,6 +25,8 @@ class RecurringEvent < ApplicationRecord
         schedule.add_recurrence_rule IceCube::Rule.weekly(1)
       when 'biweekly'
         schedule.add_recurrence_rule IceCube::Rule.weekly(2)
+      when 'every16weeks'
+        schedule.add_recurrence_rule IceCube::Rule.weekly(16)
       when 'monthly'
         schedule.add_recurrence_rule IceCube::Rule.monthly(1)
       when 'annually'

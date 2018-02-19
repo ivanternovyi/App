@@ -33,13 +33,12 @@ class RecurringEventsController < ApplicationController
   end
 
   private
-  
+
   def set_recurring_event
     @recurring_event = RecurringEvent.find(params[:id])
   end
 
   def recurring_event_params
-    params.require(:recurring_event).permit(:title, :anchor, :frequency, :color)
+    params.require(:recurring_event).permit(:id, :title, :anchor, :frequency, :color)
   end
 end
-
