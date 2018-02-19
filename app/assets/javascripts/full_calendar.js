@@ -40,7 +40,21 @@ initialize_calendar = function() {
             data: event_data,
             type: 'PATCH',
         });
-    //    $("#calendar").fullCalendar('refresh');
+      },
+
+      eventResize: function(event, delta, revertFunc){
+        event_data = {
+          event: {
+            id: event.id,
+            start: event.start.format(),
+            end: event.end.format()
+          }
+        };
+        $.ajax({
+          url: event.update_url,
+          data: event_data,
+          type: "PATCH"
+        });
       },
 
       eventClick: function(event, jsEvent, view) {
