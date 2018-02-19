@@ -25,6 +25,12 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'faker'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'factory_bot_rails'
+end
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-fullcalendar'
   gem 'rails-assets-momentjs'
