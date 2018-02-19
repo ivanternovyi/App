@@ -2,7 +2,7 @@
 Linux:
 Download zip or clone from a repository
 ```bash
-$ cd WebSchedule/
+$ cd WorkSchedule/
 $ bundle install
 $ bin/rails db:migrate RAILS_ENV=development
 $ rails server
